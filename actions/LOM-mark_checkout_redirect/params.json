@@ -1,0 +1,7 @@
+{
+    "category": "plugins",
+    "display": "Mark checkout redirect",
+    "doc": "Call before redirecting to hosted checkout so browser-back abandon recovery can run.",
+    "type": "client_side",
+    "fields": {}
+}

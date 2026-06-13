@@ -1,0 +1,91 @@
+{
+    "add_hover_pressed": true,
+    "add_is_visible": true,
+    "autobinding_value": "boolean",
+    "can_fit_height": true,
+    "can_fit_width": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 120,
+        "width": 320
+    },
+    "display": "lomi. Pay button",
+    "events": {
+        "LOM": {
+            "caption": "pay button clicked (before redirect)",
+            "name": "onclick"
+        },
+        "LON": {
+            "caption": "checkout completed (embed mode)",
+            "name": "oncomplete"
+        },
+        "LOO": {
+            "caption": "checkout error or missing URL",
+            "name": "onerror"
+        }
+    },
+    "fields": {
+        "LOP": {
+            "caption": "Checkout URL",
+            "doc": "Pass checkout_url from the “Create checkout session” workflow step",
+            "editor": "DynamicValue",
+            "name": "checkout_url",
+            "rank": 0,
+            "value": "text"
+        },
+        "LOQ": {
+            "caption": "Button text",
+            "default_val": "Pay with lomi.",
+            "editor": "StaticText",
+            "in_style": true,
+            "name": "button_text",
+            "rank": 1
+        },
+        "LOR": {
+            "caption": "Show secured badge",
+            "default_val": true,
+            "editor": "Checkbox",
+            "name": "show_badge",
+            "rank": 2
+        },
+        "LOt": {
+            "caption": "Use image button",
+            "default_val": false,
+            "doc": "Show pay-with-lomi.webp instead of text button.",
+            "editor": "Checkbox",
+            "name": "use_image_button",
+            "rank": 3
+        },
+        "LOS": {
+            "caption": "Checkout mode",
+            "default_val": "redirect",
+            "doc": "redirect = full-page hosted checkout. embed = modal (requires lomi-embed.js in page headers).",
+            "editor": "StaticText",
+            "name": "checkout_mode",
+            "optional": true,
+            "rank": 4
+        }
+    },
+    "icon": "material outlined touch_app",
+    "property_applications": {
+        "resizable": true
+    },
+    "states": {
+        "LOT": {
+            "caption": "checkout_session_id",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "checkout_session_id",
+            "value": "text"
+        },
+        "LOU": {
+            "caption": "checkout_url",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "checkout_url",
+            "value": "text"
+        }
+    }
+}

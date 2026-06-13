@@ -1,0 +1,23 @@
+{
+    "category": "plugins",
+    "display": "Redirect to checkout",
+    "type": "client_side",
+    "fields": {
+        "LOM": {
+            "caption": "Checkout URL",
+            "doc": "checkout_url returned by “Create checkout session”",
+            "editor": "DynamicValue",
+            "name": "checkout_url",
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Open in new tab",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "open_in_new_tab",
+            "optional": true,
+            "rank": 1
+        }
+    }
+}

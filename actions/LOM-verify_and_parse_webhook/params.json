@@ -1,0 +1,68 @@
+{
+    "category": "plugins",
+    "display": "Verify and parse webhook",
+    "type": "server_side",
+    "fields": {
+        "LOM": {
+            "caption": "Raw body",
+            "editor": "DynamicValue",
+            "name": "raw_body",
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Signature",
+            "doc": "X-Lomi-Signature header",
+            "editor": "DynamicValue",
+            "name": "signature",
+            "rank": 1,
+            "value": "text"
+        },
+        "LOO": {
+            "caption": "Event header",
+            "editor": "DynamicValue",
+            "name": "event_header",
+            "optional": true,
+            "rank": 2,
+            "value": "text"
+        }
+    },
+    "returned_values": {
+        "LOP": {
+            "caption": "valid",
+            "name": "valid",
+            "rank": 0,
+            "value": "boolean"
+        },
+        "LOQ": {
+            "caption": "event",
+            "name": "event",
+            "rank": 1,
+            "value": "text"
+        },
+        "LOR": {
+            "caption": "checkout_session_id",
+            "name": "checkout_session_id",
+            "rank": 2,
+            "value": "text"
+        },
+        "LOS": {
+            "caption": "transaction_id",
+            "name": "transaction_id",
+            "rank": 3,
+            "value": "text"
+        },
+        "LOT": {
+            "caption": "bubble_thing_id",
+            "name": "bubble_thing_id",
+            "rank": 4,
+            "value": "text"
+        },
+        "LOU": {
+            "caption": "metadata_json",
+            "name": "metadata_json",
+            "rank": 5,
+            "value": "text"
+        }
+    }
+}

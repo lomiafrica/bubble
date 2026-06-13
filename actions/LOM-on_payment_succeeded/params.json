@@ -1,0 +1,68 @@
+{
+    "category": "plugins",
+    "display": "On payment succeeded",
+    "doc": "Use after verifying a PAYMENT_SUCCEEDED webhook. Fetches session and confirms status is completed.",
+    "type": "server_side",
+    "fields": {
+        "LOM": {
+            "caption": "Checkout session ID",
+            "editor": "DynamicValue",
+            "name": "checkout_session_id",
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Event",
+            "doc": "Optional guard — should be PAYMENT_SUCCEEDED",
+            "editor": "DynamicValue",
+            "name": "event",
+            "optional": true,
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "returned_values": {
+        "LOO": {
+            "caption": "paid",
+            "name": "paid",
+            "rank": 0,
+            "value": "boolean"
+        },
+        "LOP": {
+            "caption": "checkout_session_id",
+            "name": "checkout_session_id",
+            "rank": 1,
+            "value": "text"
+        },
+        "LOQ": {
+            "caption": "transaction_id",
+            "name": "transaction_id",
+            "rank": 2,
+            "value": "text"
+        },
+        "LOR": {
+            "caption": "amount",
+            "name": "amount",
+            "rank": 3,
+            "value": "number"
+        },
+        "LOS": {
+            "caption": "currency_code",
+            "name": "currency_code",
+            "rank": 4,
+            "value": "text"
+        },
+        "LOT": {
+            "caption": "metadata_json",
+            "name": "metadata_json",
+            "rank": 5,
+            "value": "text"
+        },
+        "LOU": {
+            "caption": "bubble_thing_id",
+            "name": "bubble_thing_id",
+            "rank": 6,
+            "value": "text"
+        }
+    }
+}

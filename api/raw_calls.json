@@ -1,0 +1,116 @@
+{
+    "auth": "private_key_header",
+    "calls": {
+        "LOA": {
+            "body": "{\n  \"currency_code\": \"<currency_code>\",\n  \"amount\": <amount>,\n  \"integration_source\": \"bubble\",\n  \"success_url\": \"<success_url>\",\n  \"cancel_url\": \"<cancel_url>\",\n  \"customer_email\": \"<customer_email>\",\n  \"title\": \"<title>\"\n}",
+            "body_params": {
+                "LOB": {
+                    "key": "currency_code",
+                    "private": true,
+                    "value": "XOF"
+                },
+                "LOC": {
+                    "key": "amount",
+                    "private": true,
+                    "value": "5000"
+                },
+                "LOD": {
+                    "key": "success_url",
+                    "private": true,
+                    "value": "https://example.com/success"
+                },
+                "LOE": {
+                    "key": "cancel_url",
+                    "private": true,
+                    "value": "https://example.com/cancel"
+                },
+                "LOF": {
+                    "allow_blank": true,
+                    "key": "customer_email",
+                    "optional": true,
+                    "private": true,
+                    "value": "customer@example.com"
+                },
+                "LOG": {
+                    "allow_blank": true,
+                    "key": "title",
+                    "optional": true,
+                    "private": true,
+                    "value": "Bubble checkout"
+                }
+            },
+            "doc_link": "https://docs.lomi.africa/api/checkout-sessions",
+            "initialized": false,
+            "method": "post",
+            "name": "Create checkout session (API)",
+            "publish_as": "action",
+            "rank": 0,
+            "ret_value": "api.1740000000000x100000000000000000.plugin_api.LOA",
+            "types": "{\"plugin_api.LOA\":{\"caption\":\"Create checkout session\",\"fields\":{\"_p_checkout_session_id\":{\"ret_value\":\"text\",\"caption\":\"checkout_session_id\",\"path\":[\"checkout_session_id\"]},\"_p_checkout_url\":{\"ret_value\":\"text\",\"caption\":\"checkout_url\",\"path\":[\"checkout_url\"]},\"_p_status\":{\"ret_value\":\"text\",\"caption\":\"status\",\"path\":[\"status\"]},\"_p_amount\":{\"ret_value\":\"number\",\"caption\":\"amount\",\"path\":[\"amount\"]},\"_p_currency_code\":{\"ret_value\":\"text\",\"caption\":\"currency_code\",\"path\":[\"currency_code\"]}}}}",
+            "url": "https://[api_base]/checkout-sessions",
+            "url_params": {
+                "LOH": {
+                    "doc": "sandbox.api.lomi.africa (test) or api.lomi.africa (live)",
+                    "key": "api_base",
+                    "private": true,
+                    "value": "sandbox.api.lomi.africa"
+                }
+            }
+        },
+        "LOI": {
+            "initialized": false,
+            "method": "get",
+            "name": "Get checkout session (API)",
+            "publish_as": "action",
+            "rank": 1,
+            "ret_value": "api.1740000000000x100000000000000000.plugin_api.LOI",
+            "types": "{\"plugin_api.LOI\":{\"caption\":\"Get checkout session\",\"fields\":{\"_p_checkout_session_id\":{\"ret_value\":\"text\",\"caption\":\"checkout_session_id\",\"path\":[\"checkout_session_id\"]},\"_p_checkout_url\":{\"ret_value\":\"text\",\"caption\":\"checkout_url\",\"path\":[\"checkout_url\"]},\"_p_status\":{\"ret_value\":\"text\",\"caption\":\"status\",\"path\":[\"status\"]}}}}",
+            "url": "https://[api_base]/checkout-sessions/[checkout_session_id]",
+            "url_params": {
+                "LOJ": {
+                    "key": "api_base",
+                    "private": true,
+                    "value": "sandbox.api.lomi.africa"
+                },
+                "LOK": {
+                    "key": "checkout_session_id",
+                    "private": true,
+                    "value": ""
+                }
+            }
+        },
+        "LOL": {
+            "initialized": false,
+            "method": "get",
+            "name": "Test connection (API)",
+            "publish_as": "action",
+            "rank": 2,
+            "ret_value": "api.1740000000000x100000000000000000.plugin_api.LOL",
+            "types": "{\"plugin_api.LOL\":{\"caption\":\"Test connection\",\"fields\":{\"_p_organization_id\":{\"ret_value\":\"text\",\"caption\":\"organization_id\",\"path\":[\"organization_id\"]}}}}",
+            "url": "https://[api_base]/me",
+            "url_params": {
+                "LOM": {
+                    "key": "api_base",
+                    "private": true,
+                    "value": "sandbox.api.lomi.africa"
+                }
+            }
+        }
+    },
+    "human": "lomi. API",
+    "shared_headers": {
+        "LON": {
+            "key": "Accept",
+            "private": true,
+            "value": "application/json",
+            "visibility": "hidden"
+        },
+        "LOO": {
+            "key": "Content-Type",
+            "private": true,
+            "value": "application/json",
+            "visibility": "hidden"
+        }
+    },
+    "token_param_name": "X-API-Key"
+}

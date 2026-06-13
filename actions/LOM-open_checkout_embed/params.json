@@ -1,0 +1,31 @@
+{
+    "category": "plugins",
+    "display": "Open checkout embed",
+    "doc": "Opens hosted checkout in a modal when @lomi./embed is added as a plugin asset. Otherwise redirects to checkout_url.",
+    "type": "client_side",
+    "fields": {
+        "LOM": {
+            "caption": "Checkout URL",
+            "editor": "DynamicValue",
+            "name": "checkout_url",
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Mode",
+            "default_val": "modal",
+            "editor": "StaticText",
+            "name": "mode",
+            "optional": true,
+            "rank": 1
+        },
+        "LOO": {
+            "caption": "Log completion to console",
+            "default_val": true,
+            "editor": "Checkbox",
+            "name": "trigger_complete_event",
+            "optional": true,
+            "rank": 2
+        }
+    }
+}

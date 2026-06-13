@@ -1,0 +1,24 @@
+{
+    "category": "plugins",
+    "display": "Abandon checkout",
+    "doc": "Clears redirect flag and fires lomi:checkout-abandon for workflows. Pair with server Abandon checkout on cancel pages.",
+    "type": "client_side",
+    "fields": {
+        "LOM": {
+            "caption": "Checkout session ID",
+            "editor": "DynamicValue",
+            "name": "checkout_session_id",
+            "optional": true,
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Bubble Thing ID",
+            "editor": "DynamicValue",
+            "name": "bubble_thing_id",
+            "optional": true,
+            "rank": 1,
+            "value": "text"
+        }
+    }
+}

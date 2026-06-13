@@ -1,0 +1,14 @@
+{
+    "categories": {
+        "0": "payment",
+        "1": "ecommerce"
+    },
+    "demo_page": "https://lomi.africa",
+    "description": "Accept payments with lomi. hosted checkout in your Bubble app — Mobile Money, cards, and more across West Africa.",
+    "image": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/pay-with-lomi.webp",
+    "instructions": "Add your lomi. API secret key and webhook secret in Plugins → lomi. Configure test keys under Development and live keys under Production.",
+    "license": "open_source",
+    "link": "https://lomi.africa",
+    "name": "lomi.",
+    "plugin_instructions": "1. Install the plugin and open Plugins → lomi.\n2. Paste test API secret (lomi_sk_test_…) under Development and live secret (lomi_sk_live_…) under Production.\n3. Add the webhook secret for Verify and parse webhook.\n4. Workflow: Build checkout URLs → Create checkout session → Redirect (or Pay button).\n5. Success page: Complete if paid. Webhook: see docs/WEBHOOK_WORKFLOW.md.\n6. Upload assets from assets/ after first sync if CDN URLs are empty.\n\nFull guide: docs/SETUP.md in the plugin repository."
+}

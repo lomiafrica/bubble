@@ -1,0 +1,70 @@
+{
+    "category": "plugins",
+    "display": "Get checkout session",
+    "type": "server_side",
+    "fields": {
+        "LOM": {
+            "caption": "Checkout session ID",
+            "editor": "DynamicValue",
+            "name": "checkout_session_id",
+            "rank": 0,
+            "value": "text"
+        }
+    },
+    "returned_values": {
+        "LON": {
+            "caption": "checkout_session_id",
+            "name": "checkout_session_id",
+            "rank": 0,
+            "value": "text"
+        },
+        "LOO": {
+            "caption": "checkout_url",
+            "name": "checkout_url",
+            "rank": 1,
+            "value": "text"
+        },
+        "LOP": {
+            "caption": "status",
+            "name": "status",
+            "rank": 2,
+            "value": "text"
+        },
+        "LOQ": {
+            "caption": "amount",
+            "name": "amount",
+            "rank": 3,
+            "value": "number"
+        },
+        "LOR": {
+            "caption": "currency_code",
+            "name": "currency_code",
+            "rank": 4,
+            "value": "text"
+        },
+        "LOS": {
+            "caption": "customer_email",
+            "name": "customer_email",
+            "rank": 5,
+            "value": "text"
+        },
+        "LOT": {
+            "caption": "transaction_id",
+            "name": "transaction_id",
+            "rank": 6,
+            "value": "text"
+        },
+        "LOU": {
+            "caption": "metadata_json",
+            "name": "metadata_json",
+            "rank": 7,
+            "value": "text"
+        },
+        "LOV": {
+            "caption": "updated_at",
+            "name": "updated_at",
+            "rank": 8,
+            "value": "text"
+        }
+    }
+}

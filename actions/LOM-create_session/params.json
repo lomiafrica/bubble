@@ -1,0 +1,245 @@
+{
+    "category": "plugins",
+    "display": "Create checkout session",
+    "type": "server_side",
+    "fields": {
+        "LOM": {
+            "caption": "Amount",
+            "doc": "For XOF use whole francs. For USD/EUR use major units. Ignored when line_items_json is set.",
+            "editor": "DynamicValue",
+            "name": "amount",
+            "optional": true,
+            "rank": 0,
+            "value": "number"
+        },
+        "LON": {
+            "caption": "Currency",
+            "default_val": "XOF",
+            "editor": "StaticText",
+            "name": "currency_code",
+            "rank": 1
+        },
+        "LOO": {
+            "caption": "Success URL",
+            "editor": "DynamicValue",
+            "name": "success_url",
+            "rank": 2,
+            "value": "text"
+        },
+        "LOP": {
+            "caption": "Cancel URL",
+            "editor": "DynamicValue",
+            "name": "cancel_url",
+            "rank": 3,
+            "value": "text"
+        },
+        "LOQ": {
+            "caption": "Customer email",
+            "editor": "DynamicValue",
+            "name": "customer_email",
+            "optional": true,
+            "rank": 4,
+            "value": "text"
+        },
+        "LOR": {
+            "caption": "Customer name",
+            "editor": "DynamicValue",
+            "name": "customer_name",
+            "optional": true,
+            "rank": 5,
+            "value": "text"
+        },
+        "LOS": {
+            "caption": "Customer phone",
+            "editor": "DynamicValue",
+            "name": "customer_phone",
+            "optional": true,
+            "rank": 6,
+            "value": "text"
+        },
+        "LOT": {
+            "caption": "Title",
+            "editor": "DynamicValue",
+            "name": "title",
+            "optional": true,
+            "rank": 7,
+            "value": "text"
+        },
+        "LOU": {
+            "caption": "Description",
+            "editor": "DynamicValue",
+            "name": "description",
+            "optional": true,
+            "rank": 8,
+            "value": "text"
+        },
+        "LOV": {
+            "caption": "Product ID",
+            "editor": "DynamicValue",
+            "name": "product_id",
+            "optional": true,
+            "rank": 9,
+            "value": "text"
+        },
+        "LOW": {
+            "caption": "Price ID",
+            "editor": "DynamicValue",
+            "name": "price_id",
+            "optional": true,
+            "rank": 10,
+            "value": "text"
+        },
+        "LOX": {
+            "caption": "Quantity",
+            "editor": "DynamicValue",
+            "name": "quantity",
+            "optional": true,
+            "rank": 11,
+            "value": "number"
+        },
+        "LOY": {
+            "caption": "Line items (JSON)",
+            "doc": "Array of { price_id, quantity, metadata? }. When set, amount is calculated by the API.",
+            "editor": "DynamicValue",
+            "name": "line_items_json",
+            "optional": true,
+            "rank": 12,
+            "value": "text"
+        },
+        "LOZ": {
+            "caption": "Bubble Thing type",
+            "doc": "e.g. Order — stored in metadata.bubble_thing_type",
+            "editor": "DynamicValue",
+            "name": "bubble_thing_type",
+            "optional": true,
+            "rank": 13,
+            "value": "text"
+        },
+        "LOa": {
+            "caption": "Bubble Thing ID",
+            "editor": "DynamicValue",
+            "name": "bubble_thing_id",
+            "optional": true,
+            "rank": 14,
+            "value": "text"
+        },
+        "LOb": {
+            "caption": "Bubble page name",
+            "editor": "DynamicValue",
+            "name": "bubble_page",
+            "optional": true,
+            "rank": 15,
+            "value": "text"
+        },
+        "LOc": {
+            "caption": "Customer city",
+            "editor": "DynamicValue",
+            "name": "customer_city",
+            "optional": true,
+            "rank": 16,
+            "value": "text"
+        },
+        "LOd": {
+            "caption": "Customer country",
+            "editor": "DynamicValue",
+            "name": "customer_country",
+            "optional": true,
+            "rank": 17,
+            "value": "text"
+        },
+        "LOe": {
+            "caption": "Customer address",
+            "editor": "DynamicValue",
+            "name": "customer_address",
+            "optional": true,
+            "rank": 18,
+            "value": "text"
+        },
+        "LOf": {
+            "caption": "Customer postal code",
+            "editor": "DynamicValue",
+            "name": "customer_postal_code",
+            "optional": true,
+            "rank": 19,
+            "value": "text"
+        },
+        "LOg": {
+            "caption": "Customer ID",
+            "editor": "DynamicValue",
+            "name": "customer_id",
+            "optional": true,
+            "rank": 20,
+            "value": "text"
+        },
+        "LOh": {
+            "caption": "Allow coupon code",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "allow_coupon_code",
+            "optional": true,
+            "rank": 21
+        },
+        "LOi": {
+            "caption": "Require billing address",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "require_billing_address",
+            "optional": true,
+            "rank": 22
+        },
+        "LOj": {
+            "caption": "Metadata (JSON)",
+            "editor": "DynamicValue",
+            "name": "metadata_json",
+            "optional": true,
+            "rank": 23,
+            "value": "text"
+        },
+        "LOk": {
+            "caption": "App version",
+            "doc": "live or test — stored in metadata.bubble_app_version",
+            "editor": "StaticText",
+            "name": "bubble_app_version",
+            "optional": true,
+            "rank": 24
+        }
+    },
+    "returned_values": {
+        "LOl": {
+            "caption": "checkout_session_id",
+            "name": "checkout_session_id",
+            "rank": 0,
+            "value": "text"
+        },
+        "LOm": {
+            "caption": "checkout_url",
+            "name": "checkout_url",
+            "rank": 1,
+            "value": "text"
+        },
+        "LOn": {
+            "caption": "status",
+            "name": "status",
+            "rank": 2,
+            "value": "text"
+        },
+        "LOo": {
+            "caption": "amount",
+            "name": "amount",
+            "rank": 3,
+            "value": "number"
+        },
+        "LOp": {
+            "caption": "currency_code",
+            "name": "currency_code",
+            "rank": 4,
+            "value": "text"
+        },
+        "LOq": {
+            "caption": "metadata_json",
+            "name": "metadata_json",
+            "rank": 5,
+            "value": "text"
+        }
+    }
+}

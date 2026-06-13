@@ -1,0 +1,56 @@
+{
+    "assets": {
+        "LOA": {
+            "name": "pay_with_lomi",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/pay-with-lomi.webp"
+        },
+        "LOB": {
+            "name": "secured_by_lomi",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/secured-by-lomi.webp"
+        },
+        "LOC": {
+            "name": "wave",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/wave.webp"
+        },
+        "LOD": {
+            "name": "mtn",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/mtn.webp"
+        },
+        "LOE": {
+            "name": "apple_pay",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/apple-pay.webp"
+        },
+        "LOF": {
+            "name": "google_pay",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/google-pay.webp"
+        },
+        "LOG": {
+            "name": "spi",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/spi.webp"
+        },
+        "LOH": {
+            "name": "lomi_embed",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/lomi-embed.js"
+        },
+        "LOI": {
+            "name": "checkout_abandon",
+            "url": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/checkout-abandon.js"
+        }
+    },
+    "dependencies": {
+        "plugin_api_version": 4,
+        "use_jquery": true
+    },
+    "shared_keys": {
+        "LOK": {
+            "caption": "API Secret Key",
+            "doc": "Server-side secret from the lomi. dashboard (lomi_sk_test_… or lomi_sk_live_…). Bubble switches Development vs Production values automatically.",
+            "type": "private"
+        },
+        "LOL": {
+            "caption": "Webhook secret",
+            "doc": "Signing secret (whsec_…) for verifying lomi. webhooks in your Bubble backend workflow.",
+            "type": "private"
+        }
+    }
+}

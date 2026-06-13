@@ -1,0 +1,32 @@
+{
+    "category": "plugins",
+    "display": "Verify webhook signature",
+    "doc": "Use in a Bubble API workflow before processing lomi. webhook events. Compares HMAC-SHA256 of the raw body against X-Lomi-Signature.",
+    "type": "server_side",
+    "fields": {
+        "LOM": {
+            "caption": "Raw body",
+            "doc": "Unparsed request body string from the incoming webhook",
+            "editor": "DynamicValue",
+            "name": "raw_body",
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Signature",
+            "doc": "Value of the X-Lomi-Signature header",
+            "editor": "DynamicValue",
+            "name": "signature",
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "returned_values": {
+        "LOO": {
+            "caption": "valid",
+            "name": "valid",
+            "rank": 0,
+            "value": "boolean"
+        }
+    }
+}

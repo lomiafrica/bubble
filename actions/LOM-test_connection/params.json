@@ -1,0 +1,26 @@
+{
+    "category": "plugins",
+    "display": "Test API connection",
+    "type": "server_side",
+    "fields": {},
+    "returned_values": {
+        "LOM": {
+            "caption": "ok",
+            "name": "ok",
+            "rank": 0,
+            "value": "boolean"
+        },
+        "LON": {
+            "caption": "organization_id",
+            "name": "organization_id",
+            "rank": 1,
+            "value": "text"
+        },
+        "LOO": {
+            "caption": "environment",
+            "name": "environment",
+            "rank": 2,
+            "value": "text"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "add_is_visible": true,
+    "can_fit_height": true,
+    "can_fit_width": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 48,
+        "width": 360
+    },
+    "display": "lomi. Checkout branding",
+    "fields": {
+        "LOM": {
+            "caption": "Show payment methods",
+            "default_val": true,
+            "editor": "Checkbox",
+            "name": "show_methods",
+            "rank": 0
+        },
+        "LON": {
+            "caption": "Show secured badge",
+            "default_val": true,
+            "editor": "Checkbox",
+            "name": "show_secured",
+            "rank": 1
+        }
+    },
+    "icon": "material outlined verified_user",
+    "property_applications": {
+        "resizable": true
+    }
+}

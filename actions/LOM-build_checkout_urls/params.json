@@ -1,0 +1,45 @@
+{
+    "category": "plugins",
+    "display": "Build checkout URLs",
+    "doc": "Builds success_url and cancel_url with thing_id and session placeholder for create checkout session.",
+    "type": "server_side",
+    "fields": {
+        "LOM": {
+            "caption": "Success page URL",
+            "editor": "DynamicValue",
+            "name": "success_page_url",
+            "rank": 0,
+            "value": "text"
+        },
+        "LON": {
+            "caption": "Cancel page URL",
+            "editor": "DynamicValue",
+            "name": "cancel_page_url",
+            "optional": true,
+            "rank": 1,
+            "value": "text"
+        },
+        "LOO": {
+            "caption": "Bubble Thing ID",
+            "editor": "DynamicValue",
+            "name": "bubble_thing_id",
+            "optional": true,
+            "rank": 2,
+            "value": "text"
+        }
+    },
+    "returned_values": {
+        "LOP": {
+            "caption": "success_url",
+            "name": "success_url",
+            "rank": 0,
+            "value": "text"
+        },
+        "LOQ": {
+            "caption": "cancel_url",
+            "name": "cancel_url",
+            "rank": 1,
+            "value": "text"
+        }
+    }
+}
