@@ -33,7 +33,7 @@ See [docs/SETUP.md](./docs/SETUP.md) for abandon flows, XOF amounts, and embed m
 
 ```bash
 cd apps/plugins/bubble
-LOMI_API_KEY=lomi_sk_test_... node scripts/smoke-test.mjs
+LOMI_SECRET_KEY=lomi_sk_test_... node scripts/smoke-test.mjs
 ```
 
 Rebuild embed asset after SDK changes:

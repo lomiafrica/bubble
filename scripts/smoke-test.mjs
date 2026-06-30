@@ -3,7 +3,7 @@
  * Local smoke test for lomi. API helpers (no Bubble runtime required).
  *
  * Usage:
- *   LOMI_API_KEY=lomi_sk_test_... node scripts/smoke-test.mjs
+ *   LOMI_SECRET_KEY=lomi_sk_test_... node scripts/smoke-test.mjs
  */
 
 import {
@@ -14,10 +14,10 @@ import {
   parseWebhookBody,
 } from '../lib/lomi-api.mjs';
 
-const apiKey = process.env.LOMI_API_KEY || process.env.LOMI_SECRET_KEY;
+const apiKey = process.env.LOMI_SECRET_KEY;
 
 if (!apiKey) {
-  console.error('Set LOMI_API_KEY to run the smoke test.');
+  console.error('Set LOMI_SECRET_KEY to run the smoke test.');
   process.exit(1);
 }
 
