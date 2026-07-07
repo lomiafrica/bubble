@@ -1,18 +1,18 @@
 # Webhook workflow (Bubble)
 
-Bubble has no PHP webhook endpoint. Use a **Backend workflow** exposed as an API to receive lomi. webhooks — same events as WooCommerce (`PAYMENT_SUCCEEDED`, `REFUND_COMPLETED`).
+Bubble has no PHP webhook endpoint. Use a **Backend workflow** exposed as an API to receive lomi. webhooks, same events as WooCommerce (`PAYMENT_SUCCEEDED`, `REFUND_COMPLETED`).
 
 ## Prerequisites
 
-1. **Plugins → lomi.** — webhook secret for Development (test) and Production (live).
-2. **lomi. dashboard** — webhook URL pointing at your Bubble API workflow.
+1. **Plugins → lomi.**: webhook secret for Development (test) and Production (live).
+2. **lomi. dashboard**: webhook URL pointing at your Bubble API workflow.
 3. Metadata on every checkout session (`bubble_thing_id`, `bubble_thing_type`) from **Create checkout session**.
 
 ## 1. Create the API workflow
 
 1. **Backend workflows** → New workflow → name e.g. `lomi_webhook`.
 2. **Expose as a public API workflow** (POST).
-3. Copy the workflow URL — use the **test** app URL in Development and **live** app URL in Production.
+3. Copy the workflow URL, use the **test** app URL in Development and **live** app URL in Production.
 
 ### Dashboard webhook URLs
 
@@ -40,7 +40,7 @@ sequenceDiagram
   WF->>DB: Make changes (only if not already paid)
 ```
 
-### Step A — Verify and parse
+### Step A, Verify and parse
 
 **Action:** *Plugins → lomi. → Verify and parse webhook*
 
@@ -52,7 +52,7 @@ sequenceDiagram
 
 Stop the workflow if this step errors (invalid signature).
 
-### Step B — Branch on event
+### Step B, Branch on event
 
 | `Result of step A's event` | Next step |
 |----------------------------|-----------|
@@ -60,7 +60,7 @@ Stop the workflow if this step errors (invalid signature).
 | `REFUND_COMPLETED` | On refund completed (below) |
 | Other | End or log |
 
-### Step C — On payment succeeded
+### Step C, On payment succeeded
 
 **Action:** *Plugins → lomi. → On payment succeeded*
 
@@ -71,7 +71,7 @@ Stop the workflow if this step errors (invalid signature).
 
 Returns `paid = yes`, `transaction_id`, `amount`, `metadata_json`, `bubble_thing_id`.
 
-### Step D — Update your Thing (idempotency)
+### Step D, Update your Thing (idempotency)
 
 1. **Search for** Thing where `unique id` = `Result of step C's bubble_thing_id` (or your metadata field).
 2. **Only when** `payment_status` ≠ `paid` (or equivalent):
@@ -101,7 +101,7 @@ WooCommerce adds an order note; Bubble builders typically append to a `notes` te
 
 | Path | When |
 |------|------|
-| **Success URL** + *Complete if paid* | User returns from checkout — fast UX |
+| **Success URL** + *Complete if paid* | User returns from checkout, fast UX |
 | **Webhook** + *On payment succeeded* | User closes tab or network drops before redirect |
 
 Implement **both**. Webhook is authoritative; success page is a safety net for immediate UI.

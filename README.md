@@ -1,4 +1,4 @@
-# lomi. — Bubble plugin
+# lomi., Bubble plugin
 
 Bubble.io plugin for accepting payments via [lomi.](https://lomi.africa) hosted checkout. Matches the same API contract as the WooCommerce, PrestaShop, Magento, and Shopify plugins (`integration_source: bubble`).
 
@@ -19,13 +19,13 @@ Built for **Bubble Plugin API v4** (Node 18, async/Promise server actions).
 
 1. **Create the plugin** at [bubble.io/home/plugins](https://bubble.io/home/plugins) → New plugin → name it `lomi.`
 2. **Link GitHub** (Plugins → Version → Synchronize with GitHub) to [`lomiafrica/bubble`](https://github.com/lomiafrica/bubble).
-3. **Shared tab** — Plugin API version **4**; upload assets from `assets/`.
+3. **Shared tab**: Plugin API version **4**; upload assets from `assets/`.
 4. **Plugins tab in your app** (Development / Production keys).
 5. **Checkout workflow**
    - *Create checkout session* (set `bubble_thing_id` for webhooks)
    - *Redirect to checkout* or **lomi. Pay button**
-6. **Success page** — *Complete if paid* with `session_id` from URL.
-7. **Webhook** — see [docs/WEBHOOK_WORKFLOW.md](./docs/WEBHOOK_WORKFLOW.md).
+6. **Success page**: *Complete if paid* with `session_id` from URL.
+7. **Webhook**: see [docs/WEBHOOK_WORKFLOW.md](./docs/WEBHOOK_WORKFLOW.md).
 
 See [docs/SETUP.md](./docs/SETUP.md) for abandon flows, XOF amounts, and embed mode.
 
@@ -73,7 +73,7 @@ Folder names use stable internal IDs (`LOM`, `LOA`, …). **Do not rename ID key
 - Webhooks: `X-Lomi-Signature` = HMAC-SHA256(raw body, webhook secret)
 - Events: `PAYMENT_SUCCEEDED`, `REFUND_COMPLETED`
 
-## Publish checklist (Bubble marketplace — free MIT)
+## Publish checklist (Bubble marketplace, free MIT)
 
 Prerequisites: [Bubble marketplace policies](https://manual.bubble.io/account-and-marketplace/marketplace-policies)
 
@@ -89,7 +89,7 @@ Prerequisites: [Bubble marketplace policies](https://manual.bubble.io/account-an
 - [ ] Upload all `assets/images/*` and `assets/js/*`; update `html_headers.html` CDN URLs if needed
 - [ ] General tab: description, categories `payment` + `ecommerce`, demo URL, instructions (from this README)
 
-### Demo app (required — built on bubble.io, not in git)
+### Demo app (required, built on bubble.io, not in git)
 
 | Page / workflow | Purpose |
 |-----------------|--------|
@@ -121,4 +121,4 @@ Prerequisites: [Bubble marketplace policies](https://manual.bubble.io/account-an
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+MIT, see [LICENSE](./LICENSE).

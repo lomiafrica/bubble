@@ -4,7 +4,7 @@
 
 1. Go to [bubble.io/home/plugins](https://bubble.io/home/plugins) and create a plugin named **lomi.**
 2. Open the plugin → **Settings / Version** → **Synchronize with GitHub**.
-3. Connect this repo (`lomiafrica/bubble`). On first sync, Bubble may assign its own plugin ID — keep the folder structure intact when merging.
+3. Connect this repo (`lomiafrica/bubble`). On first sync, Bubble may assign its own plugin ID, keep the folder structure intact when merging.
 4. In the **Shared** tab, set **Plugin API version** to **4**.
 5. Upload **Shared → Assets** from `assets/images/` and `assets/js/` if CDN URLs are not yet assigned.
 
@@ -42,17 +42,17 @@ sequenceDiagram
 
 ### Workflow steps
 
-1. **Build checkout URLs** (optional) — generates `success_url` / `cancel_url` with `thing_id` and `session_id` query params.
+1. **Build checkout URLs** (optional), generates `success_url` / `cancel_url` with `thing_id` and `session_id` query params.
 2. **Create checkout session** (server)
-   - `amount` — XOF whole francs; USD/EUR major units (converted to cents server-side). Omitted when `line_items_json` is set.
-   - `currency_code` — `XOF`, `USD`, or `EUR`
-   - `success_url` / `cancel_url` — Bubble page URLs
-   - `bubble_thing_type`, `bubble_thing_id`, `bubble_page` — stored in metadata for webhooks
+   - `amount`: XOF whole francs; USD/EUR major units (converted to cents server-side). Omitted when `line_items_json` is set.
+   - `currency_code`: `XOF`, `USD`, or `EUR`
+   - `success_url` / `cancel_url`: Bubble page URLs
+   - `bubble_thing_type`, `bubble_thing_id`, `bubble_page`: stored in metadata for webhooks
    - Optional: customer address fields, `line_items_json`, `metadata_json`
-3. **Mark checkout redirect** (client) — call before redirect (pay button does this automatically).
-4. **Redirect to checkout** (client) — pass `checkout_url` from step 2  
+3. **Mark checkout redirect** (client), call before redirect (pay button does this automatically).
+4. **Redirect to checkout** (client), pass `checkout_url` from step 2  
    **OR** use the **lomi. Pay button** element with `checkout_url` bound to step 2’s result.
-5. **Success page** — canonical workflow:
+5. **Success page**: canonical workflow:
    - Read `session_id` from URL (`Get data from page URL`)
    - **Complete if paid** → if `paid` is no, run **Abandon checkout** (client + server)
    - If `paid` is yes → mark Thing paid, show confirmation
@@ -106,7 +106,7 @@ Embed completion also dispatches `lomi:checkout-complete` on `window`.
 
 ## 7. Checkout branding element
 
-**lomi. Checkout branding** — read-only row of payment method icons + secured badge for checkout pages (PrestaShop/Woo parity).
+**lomi. Checkout branding**: read-only row of payment method icons + secured badge for checkout pages (PrestaShop/Woo parity).
 
 ## 8. Embed mode
 
