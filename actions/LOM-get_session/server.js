@@ -54,6 +54,41 @@ function lomiRequireApiKey(context) {
   return apiKey;
 }
 
+function lomiRequireWebhookSecret(context) {
+  var secret = context.keys['Webhook secret'];
+  if (!secret) {
+    return '';
+  }
+  return String(secret);
+}
+
+function lomiIsTestApiKey(apiKey) {
+  var key = String(apiKey || '').toLowerCase();
+  return key.indexOf('_test_') !== -1 || key.indexOf('sk_test') !== -1;
+}
+
+function lomiFormatMerchantFacingError(httpCode, detail, apiKey, json) {
+  var reference = '';
+  if (json && json.request_id) {
+    reference = ' (Reference: ' + String(json.request_id) + ')';
+  } else if (json && json.correlation_id) {
+    reference = ' (Reference: ' + String(json.correlation_id) + ')';
+  }
+  var modeLabel = lomiIsTestApiKey(apiKey) ? 'test' : 'live';
+  switch (Number(httpCode)) {
+    case 401:
+      return 'Invalid secret API key for ' + modeLabel + ' mode. Copy the key from Dashboard → Developers → API keys.' + reference;
+    case 403:
+      return 'This API key cannot perform this action. Check key permissions in the lomi. dashboard.' + reference;
+    case 404:
+      return 'lomi. could not find this resource. Confirm Development vs Production keys match your dashboard.' + reference;
+    case 422:
+      return 'Payment could not be created: ' + detail + '.' + reference;
+    default:
+      return 'lomi. returned an error (' + httpCode + '): ' + detail + '.' + reference + ' See docs.lomi.africa/build/ecommerce-extensions/bubble.';
+  }
+}
+
 async function lomiRequest(apiKey, method, path, body) {
   var baseUrl = lomiResolveBaseUrl(apiKey);
   var headers = {
@@ -70,10 +105,10 @@ async function lomiRequest(apiKey, method, path, body) {
     return {};
   });
   if (!response.ok) {
-    var message =
+    var detail =
       (json && (json.message || json.error)) ||
-      'lomi. API request failed (' + response.status + ')';
-    throw new Error(message);
+      'Request failed';
+    throw new Error(lomiFormatMerchantFacingError(response.status, detail, apiKey, json));
   }
   return lomiNormalizePayload(json);
 }

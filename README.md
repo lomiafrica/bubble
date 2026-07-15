@@ -36,6 +36,19 @@ cd apps/plugins/bubble
 LOMI_SECRET_KEY=lomi_sk_test_... node scripts/smoke-test.mjs
 ```
 
+## Release cadence
+
+Bubble ships from the [`lomiafrica/bubble`](https://github.com/lomiafrica/bubble) repo (no zip). Merchants sync via the Bubble Plugin Editor.
+
+1. Merge plugin changes to `main` in `lomiafrica/bubble`.
+2. Bump the monorepo submodule pointer if needed (`apps/plugins/bubble`).
+3. Tag in the monorepo: `bubble-vX.Y.Z` (triggers [app-release-bubble.yml](https://github.com/lomiafrica/lomi./blob/develop/.github/workflows/app-release-bubble.yml)).
+4. CI runs parity, JSON validation, embed asset build, and API smoke test (when `LOMI_SECRET_KEY` is set).
+5. In Bubble Plugin Editor → **Version → Synchronize with GitHub**, pull the tagged commit.
+6. After `@lomi./embed` changes: `cd apps/sdks/embed && npm run build:iife && node apps/plugins/bubble/scripts/build-assets.mjs`, then commit `assets/js/lomi-embed.js`.
+
+Merchant docs: [docs.lomi.africa/build/ecommerce-extensions/bubble](https://docs.lomi.africa/build/ecommerce-extensions/bubble)
+
 Rebuild embed asset after SDK changes:
 
 ```bash

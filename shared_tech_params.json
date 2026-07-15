@@ -44,12 +44,12 @@
     "shared_keys": {
         "LOK": {
             "caption": "API Secret Key",
-            "doc": "Server-side secret from the lomi. dashboard (lomi_sk_test_… or lomi_sk_live_…). Bubble switches Development vs Production values automatically.",
+            "doc": "Server-side secret from the lomi. dashboard (lomi_sk_test_… in Development, lomi_sk_live_… in Production). Bubble picks sandbox vs live API host from the key prefix automatically.",
             "type": "private"
         },
         "LOL": {
             "caption": "Webhook secret",
-            "doc": "Signing secret (whsec_…) for verifying lomi. webhooks in your Bubble backend workflow.",
+            "doc": "Signing secret (whsec_…) matching the same environment as your API key. Required for PAYMENT_SUCCEEDED and REFUND_COMPLETED. Run the Test connection action after saving both fields.",
             "type": "private"
         }
     }

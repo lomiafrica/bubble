@@ -21,6 +21,18 @@
             "name": "environment",
             "rank": 2,
             "value": "text"
+        },
+        "LOP": {
+            "caption": "webhook_secret_configured",
+            "name": "webhook_secret_configured",
+            "rank": 3,
+            "value": "boolean"
+        },
+        "LOQ": {
+            "caption": "message",
+            "name": "message",
+            "rank": 4,
+            "value": "text"
         }
     }
 }
