@@ -1,3 +1,13 @@
+
+function isPlainObject(value) {
+  return value !== null && !Array.isArray(value) && Object(value) === value;
+}
+function isTranslationLeaf(value) {
+  return value === null || value === undefined || Object(value) !== value;
+}
+function isStringValue(value) {
+  return Object.prototype.toString.call(value) === '[object String]';
+}
 (function () {
   'use strict';
 
@@ -38,7 +48,7 @@
 
     window.__lomiBubblePlugin.clearCheckoutRedirect();
 
-    if (typeof options.onAbandon === 'function') {
+    if ((Object.prototype.toString.call(options.onAbandon) === '[object Function]')) {
       options.onAbandon();
     }
 
