@@ -4,7 +4,7 @@
         "1": "ecommerce"
     },
     "demo_page": "https://lomi.africa",
-    "description": "Accept payments with lomi. hosted checkout in your Bubble app — Mobile Money, cards, and more across West Africa.",
+    "description": "Accept payments with lomi. hosted checkout in your Bubble app — Mobile Money, cards, and more across Africa.",
     "image": "//dd7tel2830j4w.cloudfront.net/plugins/lomi/pay-with-lomi.webp",
     "instructions": "Add your lomi. API secret key and webhook secret in Plugins → lomi. Configure test keys under Development and live keys under Production.",
     "license": "open_source",
